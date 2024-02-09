@@ -98,6 +98,10 @@ function App() {
 export default App;
 ```
 
+## Demo
+
+Checkout demo codesandbox here - [Sandbox](https://codesandbox.io/p/devbox/w7kqhq?file=%2Fsrc%2FApp.tsx%3A9%2C2 'Demo')
+
 ## Properties for the Config object
 
 | Property | Type                | Defult | Description                                                              |
