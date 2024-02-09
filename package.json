@@ -1,12 +1,12 @@
 {
   "name": "@aishwaryv/react-skeleton",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Lightweight and minimalistic skeleton component for ReactJs",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "scripts": {
-    "build": "npm run build:esm && npm run build:cjs",
+    "build": "yarn run build:esm && yarn run build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "storybook": "storybook dev -p 9000",
