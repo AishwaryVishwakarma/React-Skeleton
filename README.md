@@ -1,6 +1,6 @@
 # React-Skeleton
 
-Minimal Skeleton component for ReactJs
+Minimal Skeleton component for ReactJs 🎉
 
 ### Install
 
@@ -98,7 +98,7 @@ function App() {
 export default App;
 ```
 
-## Properties for the config
+## Properties for the Config object
 
 | Property | Type                | Defult | Description                                                              |
 | -------- | ------------------- | ------ | ------------------------------------------------------------------------ |
