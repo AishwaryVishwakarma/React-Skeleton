@@ -1,6 +1,6 @@
 {
   "name": "@aishwaryv/react-skeleton",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Lightweight and minimalistic skeleton component for ReactJs",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -22,12 +22,6 @@
     "LICENSE",
     "README.md"
   ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    }
-  },
   "keywords": [
     "skeleton",
     "react-skeleton",
