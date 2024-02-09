@@ -1,0 +1,23 @@
+.react-loading-container {
+  position: relative;
+  animation-duration: 1s;
+}
+
+.react-loading-container > span {
+  position: absolute;
+  height: 100%;
+  width: 10%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(256, 256, 256, 0.5),
+    transparent
+  );
+  animation: slide-right ease-in-out infinite;
+}
+
+@keyframes slide-right {
+  to {
+    transform: translateX(1000%);
+  }
+}

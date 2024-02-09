@@ -1,0 +1,6 @@
+{
+  "extends": ["plugin:storybook/recommended", "prettier"],
+  "rules": {
+    "no-console": "warn"
+  }
+}
