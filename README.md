@@ -13,7 +13,7 @@ npm install @aishwaryv/react-skeleton
 Create a config array for the skeleton, omit the type if you are using Javscript
 
 ```ts
-import type {SkeletonConfig} from '../../Skeleton';
+import type {SkeletonConfig} from '@aishwaryv/reaact-skeleton';
 
 export const Config: SkeletonConfig = [
   {
@@ -104,9 +104,9 @@ Checkout demo codesandbox here - [Sandbox](https://codesandbox.io/p/devbox/w7kqh
 
 ## Properties for the Config object
 
-| Property | Type                | Defult | Description                                                              |
-| -------- | ------------------- | ------ | ------------------------------------------------------------------------ |
-| id       | String              |        | Unique ID for every element                                              |
-| style    | React.CSSProperties |        | Style object which will be applied to the parent container               |
-| duration | Number              | `1.5s` | Duration of the animation in seconds                                     |
-| content  | SkeletonConfig      |        | Content can be passed to each element which whill create a skeleton Tree |
+| Property | Type                | Defult | Description                                                                        |
+| -------- | ------------------- | ------ | ---------------------------------------------------------------------------------- |
+| id       | String              |        | Unique ID for every element                                                        |
+| style    | React.CSSProperties |        | Style object which will be applied to the parent container                         |
+| duration | Number              | `1.5s` | Duration of the animation in seconds                                               |
+| content  | SkeletonConfig      |        | Optional content can be passed to each element which will create the skeleton-tree |
