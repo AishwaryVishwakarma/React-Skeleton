@@ -39,7 +39,7 @@ export const Config: SkeletonConfig = [
             },
           },
           {
-            id: 'desc1',
+            id: 'desc2',
             style: {
               height: '40px',
               width: '200px',

@@ -1,21 +1,40 @@
 {
   "name": "@aishwaryv/react-skeleton",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightweight and minimalistic skeleton component for ReactJs",
-  "main": "src/index.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
   "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "storybook": "storybook dev -p 9000",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test": "jest --config jestconfig.json",
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
+    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run prettier && npm run lint"
   },
   "files": [
-    "src/**/*"
+    "dist",
+    "LICENSE",
+    "README.md"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "keywords": [
     "skeleton",
     "react-skeleton",
     "@aishwary/react-skeleton",
-    "skeleton-component"
+    "skeleton-component",
+    "loading",
+    "placeholder"
   ],
   "author": {
     "name": "Aishwary Vishwakarma",
@@ -51,17 +70,28 @@
     "@storybook/react": "^7.6.13",
     "@storybook/react-vite": "^7.6.13",
     "@storybook/test": "^7.6.13",
+    "@testing-library/react": "^14.2.1",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/babel__core": "^7.20.5",
+    "@types/jest": "^29.5.12",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-storybook": "^0.6.15",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "jest-canvas-mock": "^2.5.2",
+    "jest-environment-jsdom": "^29.7.0",
     "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.6.13",
+    "ts-jest": "^29.1.2",
     "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": ">=18"
   }
 }
