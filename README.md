@@ -10,7 +10,7 @@ npm install @aishwaryv/react-skeleton
 
 ### Usage
 
-Create a config array for the skeleton, omit the type if you are using Javscript
+Create a config array for the skeleton, omit the type if you are using Javscript -
 
 ```ts
 import type {SkeletonConfig} from '@aishwaryv/react-skeleton';
@@ -89,7 +89,7 @@ import Config from "./SkeletonConfig"
 function App() {
   return (
     <Skeleton
-      config={skeletonConfig}
+      config={Config}
       {...rest}"
     />
   );
