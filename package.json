@@ -1,7 +1,7 @@
 {
   "name": "@aishwaryv/react-skeleton",
   "version": "1.0.0",
-  "description": "Minimalistic skeleton components for ReactJs",
+  "description": "Lightweight and minimalistic skeleton component for ReactJs",
   "main": "src/index.ts",
   "scripts": {
     "storybook": "storybook dev -p 9000",
@@ -20,6 +20,14 @@
   "author": {
     "name": "Aishwary Vishwakarma",
     "email": "aishwaryvishwakarma23@gmail.com"
+  },
+  "homepage": "https://github.com/AishwaryVishwakarma/React-Skeleton",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AishwaryVishwakarma/React-Skeleton"
+  },
+  "bugs": {
+    "url": "https://github.com/AishwaryVishwakarma/React-Skeleton/issues"
   },
   "license": "MIT",
   "browserslist": {

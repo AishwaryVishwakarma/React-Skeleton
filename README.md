@@ -1,6 +1,6 @@
 # React-Skeleton
 
-Minimal Skeleton component for ReactJs 🎉
+Lightweight and minimalistic Skeleton component for ReactJs 🎉
 
 ### Install
 
