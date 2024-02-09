@@ -13,7 +13,7 @@ npm install @aishwaryv/react-skeleton
 Create a config array for the skeleton, omit the type if you are using Javscript
 
 ```ts
-import type {SkeletonConfig} from '@aishwaryv/reaact-skeleton';
+import type {SkeletonConfig} from '@aishwaryv/react-skeleton';
 
 export const Config: SkeletonConfig = [
   {
