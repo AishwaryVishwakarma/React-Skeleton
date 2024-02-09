@@ -1,5 +1,10 @@
 # React-Skeleton
 
+[![NPM version][npm-image]][npm-url]
+[![Build][github-build]][github-build-url]
+![npm-typescript]
+[![License][github-license]][github-license-url]
+
 Lightweight and minimalistic Skeleton component for ReactJs 🎉
 
 ### Install
@@ -110,3 +115,11 @@ Checkout demo codesandbox here - [Sandbox](https://codesandbox.io/p/devbox/w7kqh
 | style    | React.CSSProperties |        | Style object which will be applied to the parent container                         |
 | duration | Number              | `1.5s` | Duration of the animation in seconds                                               |
 | content  | SkeletonConfig      |        | Optional content can be passed to each element which will create the skeleton-tree |
+
+[npm-url]: https://www.npmjs.com/package/@aishwaryv/react-skeleton
+[npm-image]: https://img.shields.io/npm/v/@aishwaryv/react-skeleton
+[github-license]: https://img.shields.io/github/license/aishwaryvishwakarma/React-Skeleton
+[github-license-url]: https://github.com/aishwaryvishwakarma/React-Skeleton/blob/master/LICENSE
+[github-build]: https://github.com/aishwaryvishwakarma/React-Skeleton/actions/workflows/publish.yml/badge.svg
+[github-build-url]: https://github.com/aishwaryvishwakarma/React-Skeleton/actions/workflows/publish.yml
+[npm-typescript]: https://img.shields.io/npm/types/@aishwaryv/react-skeleton
