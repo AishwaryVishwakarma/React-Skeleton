@@ -6,9 +6,7 @@ import type {Props, SkeletonConfig} from './types';
 function createTree(config: SkeletonConfig): React.JSX.Element[] {
   return config.map((ele): React.JSX.Element => {
     const {id, style, content, duration = 1.5} = ele;
-
-    const haveChild = content && Array.isArray(content);
-
+    const hasChild = content && Array.isArray(content);
     return (
       <div
         key={id}
@@ -17,14 +15,14 @@ function createTree(config: SkeletonConfig): React.JSX.Element[] {
         className='react-loading-container'
         data-react-loading-container='true'
       >
-        {!haveChild && (
+        {!hasChild && (
           <span
             style={{
               animationDuration: `${duration}s`,
             }}
           />
         )}
-        {haveChild && createTree(content)}
+        {hasChild && createTree(content)}
       </div>
     );
   });
