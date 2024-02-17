@@ -95,7 +95,7 @@ function App() {
   return (
     <Skeleton
       config={Config}
-      {...rest}"
+      {...rest}
     />
   );
 }
