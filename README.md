@@ -86,18 +86,13 @@ export const Config: SkeletonConfig = [
 You can then use `Skeleton` like any other React component, passing the `config` and other attributes as needed
 
 ```jsx
-import React from 'react';
 import {Skeleton} from '@aishwaryv/react-skeleton';
+import React from 'react';
 
-import Config from "./SkeletonConfig"
+import Config from './SkeletonConfig';
 
 function App() {
-  return (
-    <Skeleton
-      config={Config}
-      {...rest}"
-    />
-  );
+  return <Skeleton config={Config} {...rest} />;
 }
 
 export default App;
