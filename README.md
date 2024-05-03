@@ -1,9 +1,9 @@
 # React-Skeleton
 
-[NPM version][npm-url]
-[Build][github-build-url]
+![NPM version][npm-url]
+![Build][github-build-url]
 ![npm-typescript][npm-typescript]
-[License][github-license-url]
+![License][github-license-url]
 
 Lightweight and minimalistic Skeleton component for ReactJs 🎉
 
