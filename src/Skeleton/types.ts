@@ -1,5 +1,6 @@
 interface Config {
   id: string;
+  className?: string;
   style: React.CSSProperties;
   duration?: number;
   content?: SkeletonConfig;

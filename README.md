@@ -109,12 +109,13 @@ Checkout demo codesandbox here - [Sandbox](https://codesandbox.io/p/devbox/w7kqh
 
 ## Properties for the Config object
 
-| Property | Type                | Defult | Description                                                                        |
-| -------- | ------------------- | ------ | ---------------------------------------------------------------------------------- |
-| id       | String              |        | Unique ID for every element                                                        |
-| style    | React.CSSProperties |        | Style object which will be applied to the parent container                         |
-| duration | Number              | `1.5`  | Duration of the animation in seconds                                               |
-| content  | SkeletonConfig      |        | Optional content can be passed to each element which will create the skeleton-tree |
+| Property  | Type                | Defult | Description                                                                        |
+| --------- | ------------------- | ------ | ---------------------------------------------------------------------------------- |
+| id        | String              |        | Unique ID for every element                                                        |
+| className | String              |        | Optional class can be prvided to each element                                      |
+| style     | React.CSSProperties |        | Style object which will be applied to the parent container                         |
+| duration  | Number              | `1.5`  | Duration of the animation in seconds                                               |
+| content   | SkeletonConfig      |        | Optional content can be passed to each element which will create the skeleton-tree |
 
 [npm-url]: https://www.npmjs.com/package/@aishwaryv/react-skeleton
 [npm-image]: https://img.shields.io/npm/v/@aishwaryv/react-skeleton
