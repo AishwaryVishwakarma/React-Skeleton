@@ -1,9 +1,9 @@
 # React-Skeleton
 
-![NPM version][npm-url]
-![Build][github-build-url]
+![NPM version][npm-image]
+![Build][github-build]
 ![npm-typescript][npm-typescript]
-![License][github-license-url]
+![License][github-license]
 
 Lightweight and minimalistic Skeleton component for ReactJs 🎉
 
@@ -100,17 +100,17 @@ export default App;
 
 ## Demo
 
-Checkout demo codesandbox here - [Sandbox](https://codesandbox.io/p/devbox/w7kqhq?file=%2Fsrc%2FApp.tsx%3A9%2C2 'Demo')
+Checkout demo code sandbox here - [Sandbox](https://codesandbox.io/p/devbox/w7kqhq?file=%2Fsrc%2FApp.tsx%3A9%2C2 'Demo')
 
 ## Properties for the Config object
 
 | Property  | Type                | Defult | Description                                                                        |
 | --------- | ------------------- | ------ | ---------------------------------------------------------------------------------- |
 | id        | String              |        | Unique ID for every element                                                        |
-| className | String              |        | Optional class can be prvided to each element                                      |
-| style     | React.CSSProperties |        | Style object which will be applied to the parent container                         |
+| className | String              |        | Optional class can be provided to each element                                      |
+| style     | React.CSSProperties |        | Styles which will be applied to the container                         |
 | duration  | Number              | `1.5`  | Duration of the animation in seconds                                               |
-| content   | SkeletonConfig      |        | Optional content can be passed to each element which will create the skeleton-tree |
+| content   | SkeletonConfig      |        | Optional content can be passed to each element which will create the skeleton tree |
 
 [npm-url]: https://www.npmjs.com/package/@aishwaryv/react-skeleton
 [npm-image]: https://img.shields.io/npm/v/@aishwaryv/react-skeleton
@@ -119,3 +119,4 @@ Checkout demo codesandbox here - [Sandbox](https://codesandbox.io/p/devbox/w7kqh
 [github-build]: https://github.com/aishwaryvishwakarma/React-Skeleton/actions/workflows/publish.yml/badge.svg
 [github-build-url]: https://github.com/aishwaryvishwakarma/React-Skeleton/actions/workflows/publish.yml
 [npm-typescript]: https://img.shields.io/npm/types/@aishwaryv/react-skeleton
+
