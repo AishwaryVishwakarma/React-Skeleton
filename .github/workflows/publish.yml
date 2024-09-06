@@ -14,12 +14,12 @@ permissions:
 
 jobs:
   build-and-publish:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env:
       GIT_USER_NAME: ${{ secrets.GIT_USER_NAME }}
       GIT_USER_EMAIL: ${{ secrets.GIT_USER_EMAIL }}
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
     steps:
       - name: Checkout
@@ -46,7 +46,7 @@ jobs:
         run: |
           git push --follow-tags origin master
         env:
-          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
       - name: Build
         run: npm run build
@@ -65,10 +65,8 @@ jobs:
               repo: context.repo.repo,
               tag_name: `v${process.env.npm_package_version}`,
               name: `Release v${process.env.npm_package_version}`,
-              body: `### Changelog\n\n${fs.readFileSync('CHANGELOG.md', 'utf8')}`,
+              body: 'Release notes here',
               draft: false,
-              prerelease: false
+              prerelease: false,
             });
             console.log(`Release created: ${release.data.html_url}`);
-        env:
-          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
