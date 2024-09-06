@@ -7,6 +7,10 @@ on:
   release:
     types: [published]
 
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
