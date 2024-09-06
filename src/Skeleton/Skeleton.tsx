@@ -18,7 +18,7 @@ function createSkeletonElements(config: SkeletonConfig): React.ReactNode[] {
 
     const skeletonElements = (
       <div
-        key={name ?? `element-${Math.random()}`}
+        key={name ?? `element_${Math.random()}`}
         style={style}
         className={`react-loading-element ${className ?? ''}`}
         data-react-loading-container={containerDataAttribute}
