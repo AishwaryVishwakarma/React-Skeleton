@@ -2,7 +2,7 @@ import type {SkeletonConfig} from '../../Skeleton';
 
 export const Config: SkeletonConfig = [
   {
-    id: 'header',
+    name: 'header',
     style: {
       width: 'max-content',
       display: 'flex',
@@ -12,7 +12,7 @@ export const Config: SkeletonConfig = [
     },
     content: [
       {
-        id: 'title',
+        name: 'title',
         style: {
           height: '30px',
           width: '400px',
@@ -21,7 +21,7 @@ export const Config: SkeletonConfig = [
         },
       },
       {
-        id: 'description',
+        name: 'description',
         style: {
           display: 'flex',
           flexDirection: 'column',
@@ -30,7 +30,6 @@ export const Config: SkeletonConfig = [
         },
         content: [
           {
-            id: 'desc1',
             style: {
               height: '40px',
               width: '250px',
@@ -39,7 +38,6 @@ export const Config: SkeletonConfig = [
             },
           },
           {
-            id: 'desc2',
             style: {
               height: '40px',
               width: '200px',
@@ -52,7 +50,7 @@ export const Config: SkeletonConfig = [
     ],
   },
   {
-    id: 'mainDescription',
+    name: 'mainDescription',
     style: {
       height: '75px',
       width: '430px',
@@ -61,7 +59,7 @@ export const Config: SkeletonConfig = [
     },
   },
   {
-    id: 'cta',
+    name: 'cta',
     style: {
       height: '50px',
       width: '200px',

@@ -50,7 +50,6 @@ export const Config: SkeletonConfig = [
         },
         content: [
           {
-            id: 'desc1',
             style: {
               height: '40px',
               width: '250px',
@@ -59,7 +58,6 @@ export const Config: SkeletonConfig = [
             },
           },
           {
-            id: 'desc2',
             style: {
               height: '40px',
               width: '200px',
@@ -104,13 +102,13 @@ Checkout demo code sandbox here - [Sandbox](https://codesandbox.io/p/devbox/w7kq
 
 ## Properties for the Config object
 
-| Property  | Type                | Defult | Description                                                                        |
-| --------- | ------------------- | ------ | ---------------------------------------------------------------------------------- |
-| id        | String              |        | Unique ID for every element                                                        |
-| className | String              |        | Optional class can be provided to each element                                      |
-| style     | React.CSSProperties |        | Styles which will be applied to the container                         |
-| duration  | Number              | `1.5`  | Duration of the animation in seconds                                               |
-| content   | SkeletonConfig      |        | Optional content can be passed to each element which will create the skeleton tree |
+| Property  | Type                | Optional | Default | Description                                                                     |
+| --------- | ------------------- | -------- | ------- | ------------------------------------------------------------------------------- |
+| name      | String              | Yes      |         | Unique name for each element                                                    |
+| className | String              | Yes      |         | Optional class name for custom styling                                          |
+| style     | React.CSSProperties | No       |         | Inline styles to be applied to the container                                    |
+| duration  | Number              | Yes      | `1.5`   | Duration of the animation in seconds                                            |
+| content   | SkeletonConfig      | Yes      |         | Nested content, which creates additional skeleton elements within the component |
 
 [npm-url]: https://www.npmjs.com/package/@aishwaryv/react-skeleton
 [npm-image]: https://img.shields.io/npm/v/@aishwaryv/react-skeleton
@@ -119,4 +117,3 @@ Checkout demo code sandbox here - [Sandbox](https://codesandbox.io/p/devbox/w7kq
 [github-build]: https://github.com/aishwaryvishwakarma/React-Skeleton/actions/workflows/publish.yml/badge.svg
 [github-build-url]: https://github.com/aishwaryvishwakarma/React-Skeleton/actions/workflows/publish.yml
 [npm-typescript]: https://img.shields.io/npm/types/@aishwaryv/react-skeleton
-
