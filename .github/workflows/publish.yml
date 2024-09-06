@@ -36,6 +36,9 @@ jobs:
       - name: Generate Changelog and Version
         run: npm run release
 
+      - name: Push back to GitHub
+        run: git push --follow-tags origin master
+
       - name: Build
         run: npm run build
 
