@@ -1,0 +1,45 @@
+# This is the name of the workflow
+name: Test and Lint on Pull Request
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow when a pull request is opened, synchronized, or reopened
+  pull_request:
+    branches:
+      - master # You can specify the branches where this workflow will run, e.g., master or main
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  test-and-lint:
+    name: Run Tests and Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        # Checkout the repository for access to the code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        # Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21.x'
+
+      - name: Install dependencies
+        run: npm install --force
+
+      - name: Run Linting
+        run: npm run lint
+
+      - name: Run Prettier
+        run: npm run prettier
+
+      - name: Run Tests
+        run: npm run test -- --ci --coverage
+
+      - name: Upload Coverage
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage
+          path: ./coverage
