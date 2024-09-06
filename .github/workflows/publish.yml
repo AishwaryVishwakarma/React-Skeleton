@@ -3,6 +3,11 @@ name: build-and-publish
 
 # Controls when the workflow will run
 on:
+  # Triggers the workflow on push to the master/main branch
+  push:
+    branches:
+      - master
+
   # Triggers the workflow on published releases
   release:
     types: [published]
