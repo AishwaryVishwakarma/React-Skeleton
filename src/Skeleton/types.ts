@@ -1,5 +1,5 @@
 interface Config {
-  id: string;
+  name?: string;
   className?: string;
   style: React.CSSProperties;
   duration?: number;

@@ -10,32 +10,33 @@ import type {Props, SkeletonConfig} from './types';
  */
 function createSkeletonElements(config: SkeletonConfig): React.ReactNode[] {
   return config.map((element): React.ReactNode => {
-    const {id, className, style, content, duration = 1.5} = element;
+    const {name, className, style, content, duration = 1.5} = element;
     const hasChild = content && Array.isArray(content);
 
     const containerDataAttribute = hasChild ? 'true' : 'false';
     const loadingElementDataAttribute = hasChild ? 'false' : 'true';
 
-    const skeletonElement = (
+    const skeletonElements = (
       <div
-        key={id}
+        key={name ?? `element_${Math.random()}`}
         style={style}
-        className={`react-loading-element ${className}`}
+        className={`react-loading-element ${className ?? ''}`}
         data-react-loading-container={containerDataAttribute}
         data-react-loading-element={loadingElementDataAttribute}
       >
-        {!hasChild && (
+        {hasChild ? (
+          createSkeletonElements(content)
+        ) : (
           <span
             style={{
               animationDuration: `${duration}s`,
             }}
           />
         )}
-        {hasChild && createSkeletonElements(content)}
       </div>
     );
 
-    return skeletonElement;
+    return skeletonElements;
   });
 }
 
