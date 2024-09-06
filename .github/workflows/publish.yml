@@ -1,39 +1,49 @@
-# This is a name of the workflow
-name: build
+# This is the name of the workflow
+name: build-and-publish
+
 # Controls when the workflow will run
 on:
   # Triggers the workflow on published releases
   release:
     types: [published]
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  # This workflow contains a single job called "build-and-publish"
+  build-and-publish:
+    name: Release
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout
         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         # Setup node environment
         uses: actions/setup-node@v4
         with:
-          # Node version. Run "node -v" to check the latest version
-          node-version: 21.x
-          registry-url: https://registry.npmjs.org/
+          node-version: '21.x' # Ensure you're using a specific Node.js version
+          registry-url: 'https://registry.npmjs.org/'
 
       - name: Install dependencies
         run: npm install --force
 
+      # This step generates a changelog and bumps the version using standard-version
+      - name: Generate Changelog and Version
+        run: npm run release
+
       - name: Build
-        run: yarn build
+        run: npm run build
 
-      - name: Publish
-        run: yarn publish
-
+      - name: Publish to NPM
+        run: npm publish --access public
         env:
-          # We need this to our NPM account
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Push Version Bump
+        # Ensure the version bump and changelog are pushed back to the repository
+        run: |
+          git push --follow-tags origin master
