@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.11 (2024-09-06)
+
+
+### Bug Fixes
+
+* workflow to not use fs ([2c4bd9b](https://github.com/AishwaryVishwakarma/React-Skeleton/commit/2c4bd9b6a97b18ff8b23c9edbabe573302b8d5e3))
+
 ### 1.0.10 (2024-09-06)
 
 ### 1.0.9 (2024-09-06)
