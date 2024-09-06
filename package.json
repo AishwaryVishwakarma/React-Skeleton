@@ -1,13 +1,12 @@
 {
   "name": "@aishwaryv/react-skeleton",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "Lightweight and minimalistic skeleton component for ReactJs",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "release": "standard-version",
-    "postrelease": "git push --follow-tags origin master && npm publish",
     "build": "rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 9000",
     "build-storybook": "storybook build",
