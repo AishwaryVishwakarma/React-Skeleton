@@ -1,26 +1,20 @@
-# This is the name of the workflow
-name: Test and Lint on Pull Request
+name: Test and Lint
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow when a pull request is opened, synchronized, or reopened
   pull_request:
     branches:
-      - master # You can specify the branches where this workflow will run, e.g., master or main
+      - master
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   test-and-lint:
-    name: Run Tests and Lint
+    name: Run Test and Lint
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        # Checkout the repository for access to the code
         uses: actions/checkout@v4
 
       - name: Setup Node.js
-        # Setup Node.js environment
         uses: actions/setup-node@v4
         with:
           node-version: '21.x'
@@ -32,7 +26,22 @@ jobs:
         run: npm run lint
 
       - name: Run Prettier
-        run: npm run prettier
+        id: prettier
+        run: |
+          npm run prettier
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --exit-code || git commit -am "style: auto-format using prettier"
+        continue-on-error: true
+
+      - name: Push Changes
+        if: success() && steps.prettier.outcome == 'success'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config pull.rebase false
+          git pull origin ${{ github.event.pull_request.base.ref }} --allow-unrelated-histories || true
+          git push origin HEAD:${{ github.event.pull_request.head.ref }} --force
 
       - name: Run Tests
         run: npm run test -- --ci --coverage
