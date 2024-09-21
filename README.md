@@ -22,7 +22,7 @@ import type {SkeletonConfig} from '@aishwaryv/react-skeleton';
 
 export const Config: SkeletonConfig = [
   {
-    id: 'header',
+    name: 'header',
     style: {
       width: 'max-content',
       display: 'flex',
@@ -32,7 +32,7 @@ export const Config: SkeletonConfig = [
     },
     content: [
       {
-        id: 'title',
+        name: 'title',
         style: {
           height: '30px',
           width: '400px',
@@ -41,7 +41,7 @@ export const Config: SkeletonConfig = [
         },
       },
       {
-        id: 'description',
+        name: 'description',
         style: {
           display: 'flex',
           flexDirection: 'column',
@@ -70,7 +70,7 @@ export const Config: SkeletonConfig = [
     ],
   },
   {
-    id: 'mainDescription',
+    name: 'mainDescription',
     style: {
       height: '75px',
       width: '430px',
