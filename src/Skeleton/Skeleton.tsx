@@ -55,5 +55,3 @@ export const Skeleton: React.FC<Props> = ({config = [], ...rest}) => {
     </div>
   );
 };
-
-
