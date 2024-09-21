@@ -39,8 +39,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config pull.rebase false
-          git pull origin ${{ github.event.pull_request.base.ref }} --allow-unrelated-histories || true
+          git pull origin ${{ github.event.pull_request.base.ref }} --strategy-option theirs --allow-unrelated-histories || true
           git push origin HEAD:${{ github.event.pull_request.head.ref }} --force
 
       - name: Run Tests
