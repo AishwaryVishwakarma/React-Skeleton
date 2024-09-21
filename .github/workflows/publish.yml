@@ -77,13 +77,13 @@ jobs:
         with:
           script: |
             const version = process.env.VERSION;
-            const releaseNotes = process.env.RELEASE_NOTES; // Get the commit messages as release notes
+            const releaseNotes = process.env.RELEASE_NOTES;
             const release = await github.rest.repos.createRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
               tag_name: `v${version}`,
               name: `Release v${version}`,
-              body: releaseNotes, // Use the commit messages as release notes
+              body: releaseNotes,
               draft: false,
               prerelease: false,
             });
