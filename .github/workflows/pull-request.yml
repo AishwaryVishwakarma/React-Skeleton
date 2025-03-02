@@ -20,7 +20,7 @@ jobs:
           node-version: '21.x'
 
       - name: Install dependencies
-        run: npm install --force
+        run: npm install --legacy-peer-deps
 
       - name: Run Linting
         run: npm run lint
@@ -34,9 +34,6 @@ jobs:
           git diff --exit-code || git commit -am "style: auto-format using prettier"
         continue-on-error: true
 
-      - name: Run Tests
-        run: npm run test -- --ci --coverage
-
       - name: Push Changes
         if: success() && steps.prettier.outcome == 'success'
         env:
@@ -44,6 +41,9 @@ jobs:
         run: |
           git pull origin ${{ github.event.pull_request.base.ref }} --strategy-option theirs --allow-unrelated-histories || true
           git push origin HEAD:${{ github.event.pull_request.head.ref }} --force
+
+      - name: Run Tests
+        run: npm run test -- --ci --coverage
 
       - name: Upload Coverage
         if: success()
