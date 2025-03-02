@@ -1,13 +1,7 @@
-interface Config {
+interface Node extends React.HTMLAttributes<HTMLDivElement> {
   name?: string;
-  className?: string;
-  style: React.CSSProperties;
   duration?: number;
-  content?: SkeletonConfig;
+  nodes?: Array<Node>;
 }
 
-export type SkeletonConfig = Array<Config>;
-
-export interface Props extends React.HTMLAttributes<HTMLDivElement> {
-  config: SkeletonConfig;
-}
+export type SkeletonTree = Array<Node>;
