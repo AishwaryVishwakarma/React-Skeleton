@@ -1,70 +1,73 @@
-import type {SkeletonConfig} from '../../Skeleton';
+import type {SkeletonTree} from '../../Skeleton';
 
-export const Config: SkeletonConfig = [
+export const Config: SkeletonTree = [
   {
-    name: 'header',
+    name: 'container',
     style: {
-      width: 'max-content',
+      height: 'max-content',
+      width: '25rem',
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'center',
-      gap: '15px',
+      gap: '2rem',
     },
-    content: [
+    nodes: [
       {
-        name: 'title',
-        style: {
-          height: '30px',
-          width: '400px',
-          background: '#dcdcdc',
-          borderRadius: '6px',
-        },
-      },
-      {
-        name: 'description',
-        style: {
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '15px',
-        },
-        content: [
+        name: 'header',
+        nodes: [
           {
+            name: 'title',
             style: {
-              height: '40px',
-              width: '250px',
-              background: '#dcdcdc',
-              borderRadius: '6px',
+              height: '2rem',
+              width: '10rem',
+              borderRadius: '0.5rem',
             },
           },
           {
+            name: 'subtitle',
             style: {
-              height: '40px',
-              width: '200px',
-              background: '#dcdcdc',
-              borderRadius: '6px',
+              height: '1rem',
+              width: '50%',
+              borderRadius: '0.25rem',
+              marginTop: '0.5rem',
+            },
+          },
+        ],
+      },
+      {
+        name: 'form',
+        style: {
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1rem',
+        },
+        nodes: [
+          {
+            name: 'input-box-1',
+            style: {
+              height: '4rem',
+              width: '100%',
+              borderRadius: '0.5rem',
+            },
+          },
+          {
+            name: 'input-box-2',
+            style: {
+              height: '4rem',
+              width: '100%',
+              borderRadius: '0.5rem',
+            },
+          },
+          {
+            name: 'button',
+            style: {
+              height: '2rem',
+              width: '100%',
+              borderRadius: '0.5rem',
+              marginTop: '1rem',
             },
           },
         ],
       },
     ],
-  },
-  {
-    name: 'mainDescription',
-    style: {
-      height: '75px',
-      width: '430px',
-      background: '#dcdcdc',
-      borderRadius: '6px',
-    },
-  },
-  {
-    name: 'cta',
-    style: {
-      height: '50px',
-      width: '200px',
-      background: '#dcdcdc',
-      borderRadius: '6px',
-    },
   },
 ];

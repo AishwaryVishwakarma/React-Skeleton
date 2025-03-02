@@ -1,23 +1,35 @@
-.react-loading-element {
+/* Skeleton Loading */
+.skeleton {
   position: relative;
   overflow: hidden;
+  border-radius: 0.25rem;
+  background-color: var(--color-skeleton, #ececec);
 }
 
-.react-loading-element > span {
+.skeleton::after {
+  content: '';
   position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
   height: 100%;
-  width: 10%;
   background: linear-gradient(
-    to right,
-    transparent,
-    rgba(256, 256, 256, 0.5),
-    transparent
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%
   );
-  animation: slide-right ease-in-out infinite;
+  animation: shimmer 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-duration: inherit;
+  z-index: 1;
 }
 
-@keyframes slide-right {
-  to {
-    transform: translateX(1000%);
+/* Keyframes for shimmer animation */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }

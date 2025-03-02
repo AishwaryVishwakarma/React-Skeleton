@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
-import {Skeleton} from '../../Skeleton';
+import Skeleton from '../../Skeleton';
 import {Config} from './SkeletonConfig';
 import './styles.css';
 
@@ -16,7 +16,7 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    config: Config,
+    tree: Config,
   },
 } satisfies Meta<typeof Skeleton>;
 
@@ -26,7 +26,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
   args: {
-    config: Config,
-    className: 'container',
+    tree: Config,
   },
 };
