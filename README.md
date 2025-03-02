@@ -18,79 +18,92 @@ npm install @aishwaryv/react-skeleton
 Create a config array for the skeleton, omit the type if you are using Javscript -
 
 ```ts
-import type {SkeletonConfig} from '@aishwaryv/react-skeleton';
+import type {SkeletonTree} from '@aishwaryv/react-skeleton';
 
-export const Config: SkeletonConfig = [
+export const Config: SkeletonTree = [
   {
-    name: 'header',
+    name: 'container',
+    // 💡 You can also use className instead of passing styles directly
     style: {
-      width: 'max-content',
+      height: 'max-content',
+      width: '25rem',
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'center',
-      gap: '15px',
+      gap: '2rem',
     },
-    content: [
+    nodes: [
       {
-        name: 'title',
-        style: {
-          height: '30px',
-          width: '400px',
-          background: '#dcdcdc',
-          borderRadius: '6px',
-        },
-      },
-      {
-        name: 'description',
-        style: {
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '15px',
-        },
-        content: [
+        name: 'header',
+        nodes: [
           {
+            name: 'title',
             style: {
-              height: '40px',
-              width: '250px',
-              background: '#dcdcdc',
-              borderRadius: '6px',
+              height: '2rem',
+              width: '10rem',
+              borderRadius: '0.5rem',
             },
           },
           {
+            name: 'subtitle',
             style: {
-              height: '40px',
-              width: '200px',
-              background: '#dcdcdc',
-              borderRadius: '6px',
+              height: '1rem',
+              width: '50%',
+              borderRadius: '0.25rem',
+              marginTop: '0.5rem',
+            },
+          },
+        ],
+      },
+      {
+        name: 'form',
+        style: {
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1rem',
+        },
+        nodes: [
+          {
+            name: 'input-box-1',
+            style: {
+              height: '4rem',
+              width: '100%',
+              borderRadius: '0.5rem',
+            },
+          },
+          {
+            name: 'input-box-2',
+            style: {
+              height: '4rem',
+              width: '100%',
+              borderRadius: '0.5rem',
+            },
+          },
+          {
+            name: 'button',
+            style: {
+              height: '2rem',
+              width: '100%',
+              borderRadius: '0.5rem',
+              marginTop: '1rem',
             },
           },
         ],
       },
     ],
   },
-  {
-    name: 'mainDescription',
-    style: {
-      height: '75px',
-      width: '430px',
-      background: '#dcdcdc',
-      borderRadius: '6px',
-    },
-  },
 ];
 ```
 
-You can then use `Skeleton` like any other React component, passing the `config` and other attributes as needed
+You can then use `Skeleton` like any other React component, passing the `tree` and other attributes as needed
 
 ```jsx
-import {Skeleton} from '@aishwaryv/react-skeleton';
 import React from 'react';
 
-import Config from './SkeletonConfig';
+import {Skeleton} from '../../Skeleton';
+import {Config} from './SkeletonConfig';
 
 function App() {
-  return <Skeleton config={Config} {...rest} />;
+  return <Skeleton tree={Config} {...rest} />;
 }
 
 export default App;
@@ -102,13 +115,11 @@ Checkout demo code sandbox here - [Sandbox](https://codesandbox.io/p/devbox/w7kq
 
 ## Properties for the Config object
 
-| Property  | Type                | Optional | Default | Description                                                                     |
-| --------- | ------------------- | -------- | ------- | ------------------------------------------------------------------------------- |
-| name      | String              | Yes      |         | Unique name for each element                                                    |
-| className | String              | Yes      |         | Optional class name for custom styling                                          |
-| style     | React.CSSProperties | No       |         | Inline styles to be applied to the container                                    |
-| duration  | Number              | Yes      | `1.5`   | Duration of the animation in seconds                                            |
-| content   | SkeletonConfig      | Yes      |         | Nested content, which creates additional skeleton elements within the component |
+| Property | Type         | Optional | Default | Description                                                                |
+| -------- | ------------ | -------- | ------- | -------------------------------------------------------------------------- |
+| name     | String       | Yes      |         | Unique name for each element                                               |
+| duration | Number       | Yes      | `1.8`   | Duration of the animation in seconds                                       |
+| nodes    | SkeletonTree | Yes      |         | Nested content, which creates additional skeleton elements within the node |
 
 [npm-url]: https://www.npmjs.com/package/@aishwaryv/react-skeleton
 [npm-image]: https://img.shields.io/npm/v/@aishwaryv/react-skeleton
