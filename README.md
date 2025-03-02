@@ -99,7 +99,7 @@ You can then use `Skeleton` like any other React component, passing the `tree` a
 ```jsx
 import React from 'react';
 
-import Skeleton from '../../Skeleton';
+import {Skeleton} from '../../Skeleton';
 import {Config} from './SkeletonConfig';
 
 function App() {
