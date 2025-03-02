@@ -34,6 +34,9 @@ jobs:
           git diff --exit-code || git commit -am "style: auto-format using prettier"
         continue-on-error: true
 
+      - name: Run Tests
+        run: npm run test -- --ci --coverage
+
       - name: Push Changes
         if: success() && steps.prettier.outcome == 'success'
         env:
@@ -42,12 +45,9 @@ jobs:
           git pull origin ${{ github.event.pull_request.base.ref }} --strategy-option theirs --allow-unrelated-histories || true
           git push origin HEAD:${{ github.event.pull_request.head.ref }} --force
 
-      - name: Run Tests
-        run: npm run test -- --ci --coverage
-
       - name: Upload Coverage
         if: success()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: code-coverage
           path: ./coverage

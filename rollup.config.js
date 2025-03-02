@@ -13,15 +13,9 @@ export default [
     input: 'src/index.ts',
     output: [
       {
-        file: packageJson.main,
-        format: 'cjs',
-        sourcemap: true,
-        name: 'react-ts-lib',
-      },
-      {
         file: packageJson.module,
         format: 'esm',
-        sourcemap: true,
+        sourcemap: false,
       },
     ],
     plugins: [
@@ -36,7 +30,7 @@ export default [
   {
     input: 'dist/esm/types/index.d.ts',
     output: [{file: 'dist/index.d.ts', format: 'esm'}],
-    external: [/\.css$/],
+    external: [/\.css$/, 'react', 'react-dom'],
     plugins: [dts.default()],
   },
 ];
