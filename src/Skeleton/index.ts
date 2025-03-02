@@ -1,2 +1,2 @@
-export {Skeleton} from './Skeleton';
-export type {SkeletonConfig} from './types';
+export {default as Skeleton} from './Skeleton';
+export type {SkeletonTree} from './types';

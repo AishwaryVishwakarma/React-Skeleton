@@ -1,1 +1,1 @@
-export {Skeleton, type SkeletonConfig} from './Skeleton';
+export {Skeleton, type SkeletonTree} from './Skeleton';

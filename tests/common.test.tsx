@@ -6,6 +6,6 @@ import {Config} from '../src/stories/Skeleton/SkeletonConfig';
 
 describe('Common render', () => {
   it('renders without crashing', () => {
-    render(<Skeleton config={Config} />);
+    render(<Skeleton tree={Config} />);
   });
 });
